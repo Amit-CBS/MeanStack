@@ -1,0 +1,49 @@
+<body>
+    <p>display works!</p>
+<hr>
+<div>
+    Full name :: {{full_name}}
+    <hr>
+    App Area :: {{app_area}}
+</div>
+<hr><hr>
+    <table>
+        <tr>
+            <th attr.colspan="{{columnspan}}">
+                Employee Details
+            </th>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>{{firstname}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{lastname}}</td>
+        </tr>
+        <tr *ngIf="hidedetails">
+            <td>Gender</td>
+            <td>{{gender}}</td>
+        </tr>
+        <tr *ngIf="hidedetails">
+            <td>Age</td>
+            <td>{{age}}</td>
+        </tr>
+        <button (click)="toggledetails()">
+            {{hidedetails?'Hide ':'Show '}}Details
+        </button>
+    </table>
+    <hr/>
+    First Name: <input [(ngModel)]='firstname'/>
+    <br/>
+    You entered : {{firstname}}
+    <br/>
+    Last Name: <input [(ngModel)]='lastname'/>
+    <br/>
+    You entered : {{lastname}}
+    <br/>
+    Email: <input [(ngModel)]='email'/>
+    <!-- Email: <input [value]='email' (input)='email=$event.target.value'/> -->
+    <br/>
+    Email : {{email}}
+</body>
