@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import "../App.css";
 
 const Form = (props) => {
@@ -19,6 +19,11 @@ const Form = (props) => {
   const showData = () => {
     setToggleAppData(!toggleAppData);
   };
+  class Form extends Component{
+    handleSubmit=(event)=>{
+      event.preventDefault()
+    }
+  }
 
   return (
     <div className="container formContainer">
@@ -78,9 +83,6 @@ const Form = (props) => {
         </form>
         <p className="text-center">{JSON.stringify(values)}</p>
         <div className="form-group text-center">
-          {/* <button type="submit" className="btn btn-primary" onClick={showData}>
-            Show Props Data
-          </button> */}
         </div>
         <br />
         {toggleAppData ? (
